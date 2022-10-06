@@ -1,0 +1,25 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+    vmImage: 'vs2017-win2016'
+
+steps:
+-   task: NodeTool@0
+    inputs:
+        versionSpec: '10.x'
+
+-   powershell: |
+        echo installing gauge
+        npm install -g @getgauge/cli
+    displayName: 'install gauge'
+
+-   powershell: |
+        echo starting gauge test
+        gauge run specs
+    displayName: 'gauge test'
