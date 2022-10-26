@@ -17,8 +17,11 @@ steps:
 -   powershell: |
         echo installing gauge
         npm install -g @getgauge/cli
+        gauge install js
+        code --install-extension getgauge.gauge
+        gauge install html-report
+        gauge install screenshot          
     displayName: 'install gauge'
-
 -   powershell: |
         echo starting gauge test
         gauge run -tags Opportunity specs
