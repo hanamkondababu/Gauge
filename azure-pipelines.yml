@@ -24,5 +24,5 @@ steps:
     displayName: 'install gauge'
 -   powershell: |
         echo starting gauge test
-        gauge run -tags Opportunity specs
+        gauge run specs
     displayName: 'gauge tests'
