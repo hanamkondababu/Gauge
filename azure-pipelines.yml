@@ -13,7 +13,10 @@ steps:
 -   task: NodeTool@0 
     inputs:
         versionSpec: '10.x'
-
+powershell: |
+        echo installing VSCode
+        choco install vscode
+    displayName: 'Install VSCode'        
 -   powershell: |
         echo installing gauge
         npm install -g @getgauge/cli
