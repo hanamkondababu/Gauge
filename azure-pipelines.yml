@@ -8,7 +8,6 @@ trigger:
 
 pool:
     vmImage: 'windows-2019'
-environment: Test
 steps:
 -   task: NodeTool@0 
     inputs:
